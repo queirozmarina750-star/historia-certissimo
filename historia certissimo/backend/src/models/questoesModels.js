@@ -3,6 +3,8 @@ const pool = require('../config/databese'); // Importa a conexão com o banco
 const buscarComFiltros = async (filtros) => {
   const { vestibular, ano, topico, dificuldade } = filtros; // Recebe os filtros
 
+  // CORREÇÃO AQUI: Mudamos "a.correta" para "a.correta AS letra_correta" para o React reconhecer o gabarito.
+  // Também adicionamos o filtro na linha do JOIN para trazer apenas a alternativa que for a certa.
   let query = `
     SELECT
       q.id_questao,
@@ -12,7 +14,7 @@ const buscarComFiltros = async (filtros) => {
       v.ano,
       t.nome_topico,
       a.texto AS texto_correto,
-      a.correta,
+      a.correta AS letra_correta, -- <-- O segredo estava aqui! Dando o apelido que o Front-end espera
       a.comentario
     FROM questoes q
     JOIN vestibular v
@@ -20,7 +22,7 @@ const buscarComFiltros = async (filtros) => {
     JOIN topicos t
       ON q.id_topico = t.id_topico
     LEFT JOIN alternativa a
-      ON a.id_questao = q.id_questao
+      ON a.id_questao = q.id_questao AND a.correta IS NOT NULL -- <-- Traz apenas a alternativa que é o gabarito
     WHERE 1=1
   `; // Monta a consulta inicial
 
