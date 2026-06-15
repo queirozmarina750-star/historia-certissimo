@@ -129,12 +129,6 @@ export default function PaginaQuestoes() {
           <option value="dificil">Difícil</option>
         </select>
 
-        <button
-          onClick={carregarDadosDoServidor}
-          className="btn-filtrar-topo"
-        >
-          Filtrar Banco
-        </button>
       </div>
 
       {/* QUESTÕES */}
