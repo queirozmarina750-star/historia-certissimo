@@ -1,4 +1,4 @@
-const pool = require('../config/databese');
+const pool = require('../config/databese'); // Importa a conexão com o banco
 
 // ============================================================
 // LISTAR TODAS AS QUESTÕES
@@ -6,10 +6,10 @@ const pool = require('../config/databese');
 
 async function listarTodos() {
   const result = await pool.query(
-    'SELECT * FROM boavisao'
+    'SELECT * FROM boavisao' // Busca todas as questões
   );
 
-  return result.rows;
+  return result.rows; // Retorna os resultados
 }
 
 // ============================================================
@@ -20,10 +20,10 @@ async function buscarPorVestibular(nome_vestibular) {
 
   const result = await pool.query(
     'SELECT * FROM boavisao WHERE nome_vestibular ILIKE $1',
-    [`%${nome_vestibular}%`]
+    [`%${nome_vestibular}%`] // Filtra pelo vestibular
   );
 
-  return result.rows;
+  return result.rows; // Retorna os resultados
 }
 
 // ============================================================
@@ -34,10 +34,10 @@ async function buscarPorTopico(nome_topico) {
 
   const result = await pool.query(
     'SELECT * FROM boavisao WHERE nome_topico ILIKE $1',
-    [`%${nome_topico}%`]
+    [`%${nome_topico}%`] // Filtra pelo tópico
   );
 
-  return result.rows;
+  return result.rows; // Retorna os resultados
 }
 
 // ============================================================
@@ -48,10 +48,10 @@ async function buscarPorDificuldade(dificuldade) {
 
   const result = await pool.query(
     'SELECT * FROM boavisao WHERE dificuldade ILIKE $1',
-    [`%${dificuldade}%`]
+    [`%${dificuldade}%`] // Filtra pela dificuldade
   );
 
-  return result.rows;
+  return result.rows; // Retorna os resultados
 }
 
 module.exports = {
@@ -59,4 +59,4 @@ module.exports = {
   buscarPorVestibular,
   buscarPorTopico,
   buscarPorDificuldade
-};
+}; // Exporta as funções

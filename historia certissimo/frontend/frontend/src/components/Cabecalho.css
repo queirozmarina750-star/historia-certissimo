@@ -1,74 +1,83 @@
+/* Container principal do cabeçalho */
 .cabecalho-container {
-  background-color: #2b1a0f; /* Cor marrom escura original do seu print */
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background-color: #2b1a0f; /* Cor de fundo marrom escura do cabeçalho */
+  padding: 15px 40px; /* Espaçamento interno (vertical e horizontal) */
+  display: flex; /* Organiza os elementos em linha */
+  justify-content: space-between; /* Espaça logotipo à esquerda e menu à direita */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  position: sticky; /* Mantém o cabeçalho fixo ao rolar a página */
+  top: 0; /* Fixa no topo da tela */
+  z-index: 1100; /* Garante que fique acima de outros elementos */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Sombra para dar profundidade */
 }
 
-/* Alinhamento do Logotipo antigo com a Coruja */
+/* Wrapper do logotipo (ícone + texto) */
 .cabecalho-logo-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  cursor: pointer;
+  display: flex; /* Alinha ícone e texto lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 15px; /* Espaço entre o ícone e o texto */
+  cursor: pointer; /* Mostra que é clicável */
 }
 
+/* Ícone da coruja (logo visual) */
 .cabecalho-logo-icone {
-  font-size: 35px;
+  font-size: 35px; /* Tamanho do emoji/ícone */
 }
 
+/* Título principal do sistema */
 .cabecalho-logo-texto h1 {
-  color: #ffffff;
-  font-family: 'Merriweather', serif;
-  font-size: 20px;
-  margin: 0;
-  letter-spacing: 1px;
+  color: #ffffff; /* Cor branca para destaque */
+  font-family: 'Merriweather', serif; /* Fonte mais estilizada e formal */
+  font-size: 20px; /* Tamanho do título */
+  margin: 0; /* Remove espaçamento padrão */
+  letter-spacing: 1px; /* Espaçamento entre letras */
 }
 
+/* Subtítulo do sistema */
 .cabecalho-logo-texto p {
-  color: #e67e22;
-  font-size: 10px;
-  margin: 0;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  color: #e67e22; /* Cor laranja para destaque secundário */
+  font-size: 10px; /* Texto menor que o título */
+  margin: 0; /* Remove margem padrão */
+  font-weight: bold; /* Deixa o texto mais forte */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  text-transform: uppercase; /* Deixa tudo em letras maiúsculas */
 }
 
+/* Menu de navegação */
 .cabecalho-nav {
-  display: flex;
-  gap: 22px;
-  align-items: center;
+  display: flex; /* Coloca os itens do menu em linha */
+  gap: 22px; /* Espaço entre os links */
+  align-items: center; /* Alinha verticalmente */
 }
 
+/* Links do menu */
 .cabecalho-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: color 0.2s;
+  color: #ffffff; /* Cor padrão branca */
+  text-decoration: none; /* Remove sublinhado padrão */
+  font-size: 13px; /* Tamanho do texto */
+  font-weight: 700; /* Deixa o texto mais forte */
+  text-transform: uppercase; /* Letras maiúsculas */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  cursor: pointer; /* Indica que é clicável */
+  transition: color 0.2s; /* Animação suave ao mudar cor */
 }
 
-.cabecalho-link:hover, .cabecalho-link.ativo {
-  color: #e67e22;
-  border-bottom: 2px solid #e67e22;
-  padding-bottom: 2px;
+/* Efeito ao passar o mouse ou item ativo */
+.cabecalho-link:hover,
+.cabecalho-link.ativo {
+  color: #e67e22; /* Muda para laranja */
+  border-bottom: 2px solid #e67e22; /* Cria destaque embaixo */
+  padding-bottom: 2px; /* Ajuste para o underline não “subir” o texto */
 }
 
+/* Botão de sair da conta */
 .btn-sair {
-  background: transparent;
-  border: 1px solid #dc3545;
-  color: #dc3545;
-  padding: 4px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 11px;
-  font-weight: bold;
+  background: transparent; /* Fundo transparente */
+  border: 1px solid #dc3545; /* Borda vermelha */
+  color: #dc3545; /* Texto vermelho */
+  padding: 4px 10px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+  cursor: pointer; /* Cursor de clique */
+  font-size: 11px; /* Texto pequeno */
+  font-weight: bold; /* Texto em destaque */
 }

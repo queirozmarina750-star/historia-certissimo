@@ -9,16 +9,16 @@ async function listarTodos(req, res) {
 
   try {
 
-    const questoes = await BoavisaoModel.listarTodos();
+    const questoes = await BoavisaoModel.listarTodos(); // Busca todas as questões
 
-    res.status(200).json(questoes);
+    res.status(200).json(questoes); // Retorna as questões
 
   } catch (erro) {
 
     res.status(500).json({
       mensagem: 'Erro ao listar questões',
       erro: erro.message
-    });
+    }); // Retorna erro
 
   }
 
@@ -33,19 +33,19 @@ async function buscarPorVestibular(req, res) {
 
   try {
 
-    const { nome } = req.params;
+    const { nome } = req.params; // Recebe o nome do vestibular
 
     const questoes =
-      await BoavisaoModel.buscarPorVestibular(nome);
+      await BoavisaoModel.buscarPorVestibular(nome); // Busca por vestibular
 
-    res.status(200).json(questoes);
+    res.status(200).json(questoes); // Retorna resultado
 
   } catch (erro) {
 
     res.status(500).json({
       mensagem: 'Erro ao buscar vestibular',
       erro: erro.message
-    });
+    }); // Retorna erro
 
   }
 
@@ -60,19 +60,19 @@ async function buscarPorTopico(req, res) {
 
   try {
 
-    const { nome } = req.params;
+    const { nome } = req.params; // Recebe o tópico
 
     const questoes =
-      await BoavisaoModel.buscarPorTopico(nome);
+      await BoavisaoModel.buscarPorTopico(nome); // Busca por tópico
 
-    res.status(200).json(questoes);
+    res.status(200).json(questoes); // Retorna resultado
 
   } catch (erro) {
 
     res.status(500).json({
       mensagem: 'Erro ao buscar tópico',
       erro: erro.message
-    });
+    }); // Retorna erro
 
   }
 
@@ -87,19 +87,19 @@ async function buscarPorDificuldade(req, res) {
 
   try {
 
-    const { nivel } = req.params;
+    const { nivel } = req.params; // Recebe a dificuldade
 
     const questoes =
-      await BoavisaoModel.buscarPorDificuldade(nivel);
+      await BoavisaoModel.buscarPorDificuldade(nivel); // Busca por dificuldade
 
-    res.status(200).json(questoes);
+    res.status(200).json(questoes); // Retorna resultado
 
   } catch (erro) {
 
     res.status(500).json({
       mensagem: 'Erro ao buscar dificuldade',
       erro: erro.message
-    });
+    }); // Retorna erro
 
   }
 
@@ -110,4 +110,4 @@ module.exports = {
   buscarPorVestibular,
   buscarPorTopico,
   buscarPorDificuldade
-};
+}; // Exporta as funções
