@@ -88,7 +88,6 @@ export default function PaginaQuestoes() {
           <option value="">Todos os Anos</option>
           <option value="2010">2010</option>
           <option value="2011">2011</option>
-          <option value="2012">2012</option>
           <option value="2013">2013</option>
           <option value="2014">2014</option>
           <option value="2017">2017</option>
@@ -99,22 +98,58 @@ export default function PaginaQuestoes() {
           <option value="2025">2025</option>
         </select>
 
-        {/* TÓPICO (TEM QUE BATER COM O BANCO) */}
-        <select
-          name="topico"
-          value={filtros.topico}
-          onChange={onChangeFiltro}
-          className="seletor-historico"
-        >
-          <option value="">Todos os Temas</option>
+{/* TÓPICO */}
+<select
+  name="topico"
+  value={filtros.topico}
+  onChange={onChangeFiltro}
+  className="seletor-historico"
+>
+  <option value="">Todos os Temas</option>
 
-          <option value="Era Vargas">Era Vargas</option>
-          <option value="Brasil Colonial e Ciclo do Ouro">Brasil Colonial</option>
-          <option value="Independência do Brasil">Independência do Brasil</option>
-          <option value="Ditadura Militar no Brasil">Ditadura Militar</option>
-          <option value="Guerra Fria">Guerra Fria</option>
-          <option value="Iluminismo">Iluminismo</option>
-        </select>
+  <option value="Era Vargas">Era Vargas</option>
+  <option value="Guerra Fria">Guerra Fria</option>
+  <option value="Ditadura Militar no Brasil">Ditadura Militar no Brasil</option>
+  <option value="Independência do Brasil">Independência do Brasil</option>
+  <option value="Cultura Brasileira e Movimentos Artísticos">
+    Cultura Brasileira e Movimentos Artísticos
+  </option>
+  <option value="Desigualdade Social e Racismo no Brasil">
+    Desigualdade Social e Racismo no Brasil
+  </option>
+  <option value="Direitos Políticos e Cidadania">
+    Direitos Políticos e Cidadania
+  </option>
+  <option value="Revolução Industrial">Revolução Industrial</option>
+  <option value="Absolutismo e Sociedade de Corte">
+    Absolutismo e Sociedade de Corte
+  </option>
+  <option value="Genocídio em Ruanda">Genocídio em Ruanda</option>
+  <option value="Imperialismo e Neocolonialismo">
+    Imperialismo e Neocolonialismo
+  </option>
+  <option value="Segundo Reinado">Segundo Reinado</option>
+  <option value="Rotas da Seda e Comércio Medieval">
+    Rotas da Seda e Comércio Medieval
+  </option>
+  <option value="Iluminismo">Iluminismo</option>
+  <option value="República Velha">República Velha</option>
+  <option value="Brasil Colonial e Ciclo do Ouro">
+    Brasil Colonial e Ciclo do Ouro
+  </option>
+  <option value="Redemocratização do Brasil">
+    Redemocratização do Brasil
+  </option>
+  <option value="Povos Indígenas no Brasil">
+    Povos Indígenas no Brasil
+  </option>
+  <option value="História das Ditaduras">
+    História das Ditaduras
+  </option>
+  <option value="Idade Média e Comércio Medieval">
+    Idade Média e Comércio Medieval
+  </option>
+</select>
 
         {/* DIFICULDADE (CORRIGIDO PARA BATER COM O BANCO) */}
         <select

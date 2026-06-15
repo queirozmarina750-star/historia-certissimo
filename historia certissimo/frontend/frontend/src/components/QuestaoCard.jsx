@@ -73,7 +73,7 @@ export default function QuestaoCard({ q, index, respostaUsuario, onChangeRespost
             <p style={{ margin: '0' }}><strong>❌ Você errou!</strong> A resposta correta é a Letra {letraCorreta}.</p>
           )}
           <div style={{ marginTop: '12px', background: '#ffffff', padding: '12px', borderLeft: '4px solid', color: '#333', borderRadius: '4px', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)', lineHeight: '1.4' }}>
-            <strong>Explicação do Banco:</strong> {q.comentario_banco || 'Nenhuma explicação cadastrada para esta questão.'}
+            <strong>Explicação:</strong> {q.comentario || 'Nenhuma explicação cadastrada para esta questão.'}
           </div>
         </div>
       )}

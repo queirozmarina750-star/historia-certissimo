@@ -4,24 +4,23 @@ const buscarComFiltros = async (filtros) => {
   const { vestibular, ano, topico, dificuldade } = filtros;
 
   let query = `
-    SELECT 
-      q.id_questao, 
-      q.enunciado, 
-      q.dificuldade, 
+    SELECT
+      q.id_questao,
+      q.enunciado,
+      q.dificuldade,
       v.nome_vestibular,
       v.ano,
       t.nome_topico,
-
-      (
-        SELECT a.texto 
-        FROM alternativa a 
-        WHERE a.id_questao = q.id_questao AND a.correta = 'A'
-        LIMIT 1
-      ) AS texto_correto
-
+      a.texto AS texto_correto,
+      a.correta,
+      a.comentario
     FROM questoes q
-    JOIN vestibular v ON q.id_vestibular = v.id_vestibular
-    JOIN topicos t ON q.id_topico = t.id_topico
+    JOIN vestibular v
+      ON q.id_vestibular = v.id_vestibular
+    JOIN topicos t
+      ON q.id_topico = t.id_topico
+    LEFT JOIN alternativa a
+      ON a.id_questao = q.id_questao
     WHERE 1=1
   `;
 
@@ -47,7 +46,7 @@ const buscarComFiltros = async (filtros) => {
   }
 
   if (dificuldade) {
-    query += ` AND q.dificuldade = $${counter}`;
+    query += ` AND LOWER(q.dificuldade) = LOWER($${counter})`;
     params.push(dificuldade);
     counter++;
   }
@@ -55,6 +54,7 @@ const buscarComFiltros = async (filtros) => {
   query += ` ORDER BY q.id_questao ASC`;
 
   const resultado = await pool.query(query, params);
+
   return resultado.rows;
 };
 
