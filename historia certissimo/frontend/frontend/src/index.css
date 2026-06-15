@@ -1,0 +1,31 @@
+:root {
+  --cor-creme: #fffaf1;
+  --cor-marrom: #3d2b1f;
+  --cor-laranja: #e67e22;
+  --cor-texto: #5a4a42;
+  --cor-fundo-card: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', 'Segoe UI', sans-serif;
+  background-color: #f4efe6; /* Cor de papel antigo */
+  color: var(--cor-texto);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Merriweather', serif;
+  color: var(--cor-marrom);
+}
+
+/* Customização da barra de rolagem para combinar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cor-creme);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cor-marrom);
+  border-radius: 4px;
+}

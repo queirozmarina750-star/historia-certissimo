@@ -1,0 +1,20 @@
+.barra-filtros-topo {
+  background-color: transparent; /* Remove o segundo bloco marrom */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.seletor-historico {
+  background-color: #fffaf1;
+  color: #3d2b1f;
+  border: 1px solid #3d2b1f; /* Borda escura combinando com o tema */
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
