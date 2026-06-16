@@ -118,17 +118,18 @@ export default function Home() {
           <h4 style={{ color: '#000000', fontSize: '36px', fontFamily: 'sans-serif', fontWeight: 'bold', letterSpacing: '1px', margin: '0 0 40px 0' }}>
             NOSSA EQUIPE:
           </h4>
-
-          {/* GRID COM OS 6 INTEGRANTES */}
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', 
-            gap: '20px', 
-            maxWidth: '1100px', 
-            margin: '0 auto' 
-          }}>
-            
-            {/* CARD 1: MARINA */}
+{/* CONTAINER DOS 6 INTEGRANTES */}
+<div
+  style={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: '20px',
+    maxWidth: '1100px',
+    margin: '0 auto'
+  }}
+>
+{/* CARD 1: MARINA */}
             <div style={{ backgroundColor: '#fffaf1', padding: '20px 10px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
               <div style={{ width: '90px', height: '90px', borderRadius: '50%', overflow: 'hidden', margin: '0 auto 15px auto', backgroundColor: '#ddd' }}>
                 <img src={fotoMarina} alt="Marina Queiroz" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
