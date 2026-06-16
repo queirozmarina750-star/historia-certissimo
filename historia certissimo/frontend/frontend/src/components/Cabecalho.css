@@ -81,3 +81,79 @@
   font-size: 11px; /* Texto pequeno */
   font-weight: bold; /* Texto em destaque */
 }
+
+@media (max-width: 768px) {
+
+  .cabecalho-container {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cabecalho-logo-wrapper {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cabecalho-logo-texto h1 {
+    font-size: 18px;
+  }
+
+  .cabecalho-logo-texto p {
+    font-size: 9px;
+  }
+
+  .cabecalho-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .cabecalho-link {
+    font-size: 12px;
+  }
+
+  .btn-sair {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .cabecalho-container {
+    padding: 12px;
+  }
+
+  .cabecalho-logo-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cabecalho-logo-icone {
+    font-size: 28px;
+  }
+
+  .cabecalho-logo-texto h1 {
+    font-size: 16px;
+  }
+
+  .cabecalho-logo-texto p {
+    font-size: 8px;
+  }
+
+  .cabecalho-nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cabecalho-link {
+    font-size: 11px;
+  }
+
+  .btn-sair {
+    width: 100px;
+    text-align: center;
+  }
+}
