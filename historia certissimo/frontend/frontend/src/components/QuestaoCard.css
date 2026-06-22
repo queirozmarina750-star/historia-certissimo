@@ -1,0 +1,107 @@
+.questao-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.enunciado {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    color: #222;
+}
+
+.info-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.info-tag {
+    font-size: 0.75em;
+    background: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #495057;
+}
+
+.destaque {
+    font-weight: bold;
+}
+
+.linha-divisoria {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+.opcao {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: white;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.opcao input {
+    margin-right: 8px;
+}
+
+.opcao.correta {
+    background: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    font-weight: bold;
+}
+
+.opcao.errada {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.feedback {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid;
+}
+
+.feedback.nao-respondida {
+    background: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+}
+
+.feedback.acertou {
+    background: #e2f0d9;
+    border-color: #c3e6cb;
+    color: #2e7d32;
+}
+
+.feedback.errou {
+    background: #fce8e6;
+    border-color: #f5c6cb;
+    color: #c62828;
+}
+
+.feedback p {
+    margin: 0;
+}
+
+.explicacao {
+    margin-top: 12px;
+    background: white;
+    padding: 12px;
+    border-left: 4px solid #ccc;
+    color: #333;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    line-height: 1.4;
+}

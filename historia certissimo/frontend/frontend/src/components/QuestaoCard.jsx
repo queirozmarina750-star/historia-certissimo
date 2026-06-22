@@ -1,7 +1,8 @@
 import React from 'react';
+import './QuestaoCard.css';
 
 // Componente responsável por exibir uma questão individual,
-// permitir que o usuário selecione uma alternativa e mostrar a correção.
+// permitir a escolha de uma alternativa e mostrar o resultado da correção
 export default function QuestaoCard({
   q,
   index,
@@ -10,266 +11,188 @@ export default function QuestaoCard({
   corrigido
 }) {
 
-  // Garante que a letra correta sempre exista e fique em maiúsculo
-  const letraCorreta = (q.letra_correta || 'A').trim().toUpperCase();
+  // Obtém a letra correta da questão.
+  // Caso não exista nenhuma letra cadastrada no banco,
+  // a letra A é utilizada como padrão.
+  const letraCorreta = (q.letra_correta || 'A')
+    .trim()
+    .toUpperCase();
 
-  // Função responsável por definir a aparência de cada alternativa
-  const obterEstiloLabel = (letraOpcao) => {
+  // Função responsável por definir qual classe CSS será aplicada
+  // em cada alternativa, dependendo do resultado da correção.
+  const obterClasseOpcao = (letraOpcao) => {
 
-    // Estilo padrão utilizado antes da correção
-    const padrao = {
-      margin: '10px 0',
-      display: 'block',
-      cursor: corrigido ? 'default' : 'pointer',
-      padding: '12px',
-      borderRadius: '6px',
-      border: '1px solid #ddd',
-      backgroundColor: '#ffffff',
-      transition: 'all 0.2s'
-    };
+    // Antes da correção todas as alternativas possuem o estilo padrão
+    if (!corrigido) return 'opcao';
 
-    // Enquanto o usuário ainda não corrigiu, todas as alternativas ficam iguais
-    if (!corrigido) return padrao;
-
-    // Após a correção, a alternativa correta é destacada em verde
+    // Se a alternativa for a correta, ela ficará destacada em verde
     if (letraOpcao === letraCorreta) {
-      return {
-        ...padrao,
-        backgroundColor: '#d4edda',
-        borderColor: '#c3e6cb',
-        color: '#155724',
-        fontWeight: 'bold'
-      };
+      return 'opcao correta';
     }
 
-    // Caso o usuário tenha marcado uma alternativa errada,
-    // ela é destacada em vermelho
+    // Se o usuário marcou esta alternativa e ela estiver errada,
+    // ela ficará destacada em vermelho
     if (
       respostaUsuario === letraOpcao &&
       respostaUsuario !== letraCorreta
     ) {
-      return {
-        ...padrao,
-        backgroundColor: '#f8d7da',
-        borderColor: '#f5c6cb',
-        color: '#721c24'
-      };
+      return 'opcao errada';
     }
 
-    // As demais alternativas permanecem com o estilo normal
-    return padrao;
+    // As demais alternativas permanecem com o estilo padrão
+    return 'opcao';
+  };
+
+  // Função responsável por definir a aparência da caixa
+  // de feedback exibida após a correção
+  const obterClasseFeedback = () => {
+
+    // Caso o usuário não tenha respondido a questão
+    if (!respostaUsuario) {
+      return 'feedback nao-respondida';
+    }
+
+    // Caso tenha respondido, verifica se acertou ou errou
+    return respostaUsuario === letraCorreta
+      ? 'feedback acertou'
+      : 'feedback errou';
   };
 
   return (
 
-    // Caixa principal da questão
-    <div
-      style={{
-        background: '#f9f9f9',
-        border: '1px solid #ddd',
-        padding: '20px',
-        marginBottom: '25px',
-        borderRadius: '8px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
-      }}
-    >
+    // Container principal da questão
+    <div className="questao-card">
 
       {/* Enunciado da questão */}
-      <p
-        style={{
-          whiteSpace: 'pre-wrap',
-          lineHeight: '1.5',
-          color: '#222'
-        }}
-      >
-        <strong>Questão {index + 1}:</strong> {q.enunciado}
+      <p className="enunciado">
+        <strong>Questão {index + 1}:</strong>
+        {' '}
+        {q.enunciado}
       </p>
 
-      {/* Informações extras da questão */}
-      <div
-        style={{
-          display: 'flex',
-          gap: '8px',
-          flexWrap: 'wrap',
-          margin: '12px 0'
-        }}
-      >
+      {/* Informações adicionais da questão */}
+      <div className="info-container">
 
         {/* Nome do vestibular */}
-        <span
-          style={{
-            fontSize: '0.75em',
-            background: '#e9ecef',
-            padding: '4px 8px',
-            borderRadius: '4px',
-            color: '#495057',
-            fontWeight: 'bold'
-          }}
-        >
+        <span className="info-tag destaque">
           {q.nome_vestibular}
         </span>
 
         {/* Ano da prova */}
-        <span
-          style={{
-            fontSize: '0.75em',
-            background: '#e9ecef',
-            padding: '4px 8px',
-            borderRadius: '4px',
-            color: '#495057'
-          }}
-        >
+        <span className="info-tag">
           Ano: {q.ano}
         </span>
 
-        {/* Tema da questão */}
-        <span
-          style={{
-            fontSize: '0.75em',
-            background: '#e9ecef',
-            padding: '4px 8px',
-            borderRadius: '4px',
-            color: '#495057'
-          }}
-        >
+        {/* Tema ou tópico relacionado à questão */}
+        <span className="info-tag">
           Tema: {q.nome_topico}
         </span>
 
-        {/* Nível de dificuldade */}
-        <span
-          style={{
-            fontSize: '0.75em',
-            background: '#e9ecef',
-            padding: '4px 8px',
-            borderRadius: '4px',
-            color: '#495057'
-          }}
-        >
+        {/* Grau de dificuldade da questão */}
+        <span className="info-tag">
           Nível: {q.dificuldade}
         </span>
+
       </div>
 
-      {/* Linha divisória entre o enunciado e as alternativas */}
-      <hr
-        style={{
-          border: 0,
-          borderTop: '1px solid #eee',
-          margin: '15px 0'
-        }}
-      />
+      {/* Linha divisória entre as informações e as alternativas */}
+      <hr className="linha-divisoria" />
 
-      {/* Área das alternativas */}
+      {/* Área responsável pelas alternativas */}
       <div className="opcoes">
 
-        {/* Percorre as letras A, B, C, D e E para gerar as opções */}
+        {/* Percorre as letras A, B, C, D e E criando cada alternativa */}
         {['A', 'B', 'C', 'D', 'E'].map(letra => (
 
-          // Cada alternativa é exibida dentro de um label
+          // Label correspondente a cada alternativa
           <label
             key={letra}
-            style={obterEstiloLabel(letra)}
+            className={obterClasseOpcao(letra)}
           >
 
-            {/* Radio button para selecionar a resposta */}
+            {/* Botão de seleção da resposta */}
             <input
               type="radio"
+
+              // Garante que apenas uma alternativa possa ser escolhida
               name={`questao_${q.id_questao}`}
+
               value={letra}
+
+              // Verifica se esta alternativa é a selecionada
               checked={respostaUsuario === letra}
 
-              // Envia para o componente pai qual alternativa foi escolhida
+              // Envia para o componente pai a alternativa escolhida
               onChange={() =>
                 onChangeResposta(q.id_questao, letra)
               }
 
-              // Após corrigir, as respostas são bloqueadas
+              // Depois da correção o usuário não pode mais alterar a resposta
               disabled={corrigido}
-              style={{ marginRight: '8px' }}
             />
 
-            <strong>{letra})</strong> Marcar Alternativa {letra}
+            {/* Texto exibido ao lado do botão */}
+            <strong>{letra})</strong>
+            {' '}
+            Marcar Alternativa {letra}
+
           </label>
+
         ))}
       </div>
 
-      {/* Caixa de feedback que aparece somente após a correção */}
+      {/* A área de feedback aparece somente após a correção */}
       {corrigido && (
 
-        <div
-          style={{
-            marginTop: '15px',
-            padding: '15px',
-            borderRadius: '6px',
-            border: '1px solid',
+        <div className={obterClasseFeedback()}>
 
-            // Define a cor da caixa dependendo do resultado
-            backgroundColor:
-              !respostaUsuario
-                ? '#fff3cd'
-                : respostaUsuario === letraCorreta
-                ? '#e2f0d9'
-                : '#fce8e6',
-
-            borderColor:
-              !respostaUsuario
-                ? '#ffeeba'
-                : respostaUsuario === letraCorreta
-                ? '#c3e6cb'
-                : '#f5c6cb',
-
-            color:
-              !respostaUsuario
-                ? '#856404'
-                : respostaUsuario === letraCorreta
-                ? '#2e7d32'
-                : '#c62828'
-          }}
-        >
-
-          {/* Mensagem exibida para o usuário conforme o resultado */}
+          {/* Caso a questão não tenha sido respondida */}
           {!respostaUsuario ? (
-            <p style={{ margin: '0' }}>
+
+            <p>
               <strong>⚠️ Não respondida!</strong>
-              {' '}O gabarito correto é a Letra {letraCorreta}.
+              {' '}
+              O gabarito correto é a Letra {letraCorreta}.
             </p>
 
           ) : respostaUsuario === letraCorreta ? (
 
-            <p style={{ margin: '0' }}>
-              <strong>✔ Você acertou!</strong> Parabéns.
+            // Caso o usuário tenha acertado
+            <p>
+              <strong>✔ Você acertou!</strong>
+              {' '}
+              Parabéns.
             </p>
 
           ) : (
 
-            <p style={{ margin: '0' }}>
+            // Caso o usuário tenha errado
+            <p>
               <strong>❌ Você errou!</strong>
-              {' '}A resposta correta é a Letra {letraCorreta}.
+              {' '}
+              A resposta correta é a Letra {letraCorreta}.
             </p>
+
           )}
 
-          {/* Comentário da questão armazenado no banco de dados */}
-          <div
-            style={{
-              marginTop: '12px',
-              background: '#ffffff',
-              padding: '12px',
-              borderLeft: '4px solid',
-              color: '#333',
-              borderRadius: '4px',
-              boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.05)',
-              lineHeight: '1.4'
-            }}
-          >
+          {/* Caixa contendo a explicação da questão */}
+          <div className="explicacao">
 
-            {/* Explicação cadastrada para auxiliar o usuário na aprendizagem */}
             <strong>Explicação:</strong>
 
-            {q.comentario ||
-              'Nenhuma explicação cadastrada para esta questão.'}
+            {/* Comentário cadastrado no banco de dados.
+                Caso não exista, é exibida uma mensagem padrão */}
+            {
+              q.comentario ||
+              'Nenhuma explicação cadastrada para esta questão.'
+            }
 
           </div>
+
         </div>
+
       )}
+
     </div>
   );
 }

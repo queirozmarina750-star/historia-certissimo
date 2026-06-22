@@ -1,0 +1,232 @@
+/* Container Geral */
+.home-container {
+  background-color: #fffaf1;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+/* Seção Hero */
+.hero-secao {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-emoji {
+  color: #e67e22;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero-titulo {
+  color: #3d2b1f;
+  font-size: 72px;
+  font-family: 'Merriweather', serif;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-subtitulo {
+  color: #e67e22;
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+}
+
+.hero-texto {
+  color: #5a4a42;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.btn-comecar {
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;       /* Reduzido para não esticar */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 50px;
+  
+  /* Força o botão a ter apenas o tamanho do texto interno */
+  width: fit-content;       
+  display: inline-block;
+}
+
+.btn-comecar:hover {
+  background-color: #cf6d17;
+}
+
+/* Ícones de Recursos */
+.recursos-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.recurso-card {
+  width: 130px;
+  text-align: center;
+}
+
+.recurso-circulo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #e67e22;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 10px auto;
+  font-size: 24px;
+  color: #e67e22;
+  justify-content: center;
+}
+
+.recurso-texto {
+  font-size: 12px;
+  font-weight: bold;
+  color: #5a4a42;
+  margin: 0;
+}
+
+/* Seção Quem Somos */
+.quem-somos-secao {
+  padding: 60px 0 0 0;
+  text-align: center;
+  background-color: #fffaf1;
+}
+
+.quem-somos-titulo {
+  font-size: 42px;
+  font-family: 'Merriweather', serif;
+  color: #000000;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.quem-somos-paragrafo {
+  font-size: 18px;
+  color: #000000;
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+.quem-somos-slogan {
+  font-style: italic;
+  font-size: 32px;
+  color: #e67e22;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  margin: 0 0 60px 0;
+}
+
+/* Bloco Equipe */
+.equipe-bloco {
+  background-color: #e67e22;
+  padding: 50px 20px 60px 20px;
+  text-align: center;
+}
+
+.equipe-titulo {
+  color: #000000;
+  font-size: 36px;
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0 0 40px 0;
+}
+
+.equipe-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Cards dos Integrantes */
+.membro-card {
+  background-color: #fffaf1;
+  padding: 20px 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 140px;
+  border-radius: 4px;
+}
+
+.membro-foto-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px auto;
+  background-color: #ddd;
+}
+
+.membro-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.membro-nome {
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.membro-cargo {
+  color: #555;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Rodapé */
+.rodape-container {
+  background-color: #1a0f08;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rodape-citacao {
+  color: #e67e22;
+  font-size: 11px;
+  margin: 0;
+  font-style: italic;
+  text-align: left;
+  max-width: 600px;
+}
+
+.rodape-saudacao {
+  color: #e67e22;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+}

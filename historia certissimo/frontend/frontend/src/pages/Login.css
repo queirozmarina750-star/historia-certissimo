@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.login-container{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.65)
+    ),
+    url("https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    font-family:'Segoe UI', sans-serif;
+}
+
+.login-card{
+
+    width:420px;
+
+    background:rgba(255,248,220,0.95);
+
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.4);
+
+    border:3px solid #c67b28;
+
+    backdrop-filter:blur(4px);
+}
+
+.login-card h1{
+    text-align:center;
+
+    color:#8b4513;
+
+    margin-bottom:10px;
+
+    font-size:2rem;
+}
+
+.subtitulo{
+    text-align:center;
+
+    color:#5f3a1b;
+
+    margin-bottom:30px;
+
+    font-size:14px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+
+    margin-bottom:18px;
+}
+
+.input-group label{
+    margin-bottom:6px;
+
+    color:#5f3a1b;
+
+    font-weight:600;
+}
+
+.input-group input{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:2px solid #d6a15d;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.input-group input:focus{
+
+    border-color:#ff8c00;
+
+    box-shadow:
+    0 0 8px rgba(255,140,0,.4);
+}
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        #ff8c00,
+        #c96b00
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    background:linear-gradient(
+        135deg,
+        #ffa733,
+        #d97706
+    );
+}

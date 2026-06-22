@@ -1,0 +1,83 @@
+/* =====================================================
+   CONTAINER PRINCIPAL DA PÁGINA DE SIMULADO
+   Responsável pelo espaçamento geral e centralização
+===================================================== */
+.home-container {
+  padding: 20px;
+  padding-bottom: 110px; /* espaço para o rodapé fixo */
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+/* =====================================================
+   CABEÇALHO DA PÁGINA
+   Contém o título e o botão de logout
+===================================================== */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Título principal da área de estudos */
+.home-title {
+  color: #333;
+  margin: 0;
+}
+
+/* =====================================================
+   BOTÃO DE SAÍDA DO SISTEMA
+===================================================== */
+.btn-sair {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+/* =====================================================
+   MENSAGEM EXIBIDA QUANDO NÃO EXISTEM QUESTÕES
+   PARA OS FILTROS SELECIONADOS
+===================================================== */
+.sem-questoes {
+  text-align: center;
+  color: #777;
+  padding: 50px 0;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+/* =====================================================
+   BOTÃO DE CORREÇÃO DO SIMULADO
+   Utilizado para finalizar e corrigir as respostas
+===================================================== */
+.btn-corrigir {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 1.1em;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+  margin-bottom: 30px;
+}
+
+/* =====================================================
+   EFEITOS VISUAIS DOS BOTÕES
+===================================================== */
+.btn-sair:hover {
+  opacity: 0.9;
+}
+
+.btn-corrigir:hover {
+  opacity: 0.9;
+}

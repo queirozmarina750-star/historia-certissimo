@@ -1,59 +1,69 @@
 /* Container da barra de filtros no topo da página */
 .barra-filtros-topo {
-  background-color: transparent; /* Remove fundo para integrar com o layout */
-  padding: 20px; /* Espaçamento interno para não ficar colado nas bordas */
-  display: flex; /* Organiza os filtros em linha */
-  justify-content: center; /* Centraliza os filtros horizontalmente */
-  gap: 15px; /* Espaço entre cada seletor */
-  margin-top: 10px; /* Espaço superior para separar do conteúdo acima */
+  background-color: transparent;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 /* Estilo aplicado a todos os selects (filtros dropdown) */
 .seletor-historico {
-  background-color: #fffaf1; /* Fundo claro em tom bege, estilo "história" */
-  color: #3d2b1f; /* Cor do texto em marrom escuro para contraste */
-  border: 1px solid #3d2b1f; /* Borda combinando com o tema visual */
-  padding: 10px 15px; /* Aumenta a área clicável e melhora usabilidade */
-  border-radius: 4px; /* Bordas levemente arredondadas */
-  font-family: 'Lato', sans-serif; /* Fonte moderna e limpa */
-  font-weight: bold; /* Destaque no texto do seletor */
-  cursor: pointer; /* Indica que o elemento é clicável */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra leve para dar profundidade */
+  background-color: #fffaf1;
+  color: #3d2b1f;
+  border: 1px solid #3d2b1f;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* RESPONSIVIDADE */
-
-/* Tablet */
-@media (max-width: 768px) {
-
-  .barra-filtros-topo {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 15px;
-  }
-
-  .seletor-historico {
-    width: 180px;
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
+/* Área principal onde ficam as questões */
+.conteudo-questoes {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* Celular */
-@media (max-width: 480px) {
+/* Área do título do caderno */
+.titulo-caderno {
+  margin-bottom: 30px;
+  border-left: 6px solid #e67e22;
+  padding-left: 15px;
+}
 
-  .barra-filtros-topo {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
-  }
+/* Texto do título */
+.titulo-caderno-texto {
+  margin: 0;
+  text-transform: uppercase;
+}
 
-  .seletor-historico {
-    width: 100%;
-    max-width: 300px;
-    font-size: 13px;
-  }
+/* Mensagem exibida quando nenhuma questão é encontrada */
+.mensagem-sem-questoes {
+  text-align: center;
+  padding: 50px 0;
+  border: 2px dashed #e4d8c1;
+  background: #fffaf1;
+}
 
+/* Botão de corrigir o simulado */
+.botao-corrigir {
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 18px;
+  font-size: 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.botao-corrigir:hover {
+  background: #d46f15;
 }
